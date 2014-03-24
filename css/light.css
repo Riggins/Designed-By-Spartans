@@ -1,6 +1,10 @@
 /* colour styles : light  */
-  body  { background: #FFF;  font-size:12px; line-height:20px;  font-family: 'Droid Sans', sans-serif;   }
-  #wrap { /*width:94%; margin-left:3%;*/ max-width: 1200px; margin: 0 auto;
+  body  { background: #FFF;  font-size:13px; line-height:20px;  font-family: 'Droid Sans', sans-serif;   }
+  #wrap { /*width:94%; margin-left:3%;*/ max-width: 90%; margin: 0 auto;
+  }
+  
+  .clearfix {
+  	clear: both;
   }
   
 /* font styles */	
@@ -14,7 +18,7 @@
 
 /* list Styles */
   ul 	{ padding:0px; margin:0; margin-left:0px; font-family:'Helvetica',Arial, Helvetica, sans-serif; margin-top:10px;   }
-  ul li { font-size:12px; color:#858585; padding-left:10px; margin-bottom:7px; list-style:inside; list-style-type:square;}
+  ul li { font-size:12px; color:#858585; padding-left:10px; margin-bottom:7px;}
   ol 	{ padding:0px; margin:0; margin-left:25px; font-family:'Helvetica',Arial, Helvetica, sans-serif; margin-top:10px;   }
   ol li { font-size:12px; color:#858585; padding-left:10px; margin-bottom:7px;  list-style-type: decimal; }
   hr 	{ background:url(../images/hr.jpg) top center no-repeat; border:0; outline:0; clear:both; height:10px;}
@@ -27,13 +31,30 @@
   a:focus 		{outline-style: none;}  	
 	
 /* header nav styles */ 
-  #header 			 { width:100% }
-  #logo 			 { margin-top:35px; margin-bottom:15px; }
+  #header 			 { width: 100%;
+padding: 30px 0;
+height: auto;
+display: inline-block;
+border-bottom: 1px solid #ECECEC;
+margin: 0 0 20px; }
+  #logo 			 { 
+  
+  }
+  
+  #site-title {
+  	float: left;
+width: 210px;
+padding-right: 40px;
+overflow: hidden;
+line-height: 27px;
+font-size: 23px;
+  }
+  
   #nav 				 { width: 100%;
 height: 55px;
 overflow: hidden;
 border-bottom: 2px solid #DBDBDB;
-border-top: 1px solid #D8D8D8; }
+border-top: 1px solid #D8D8D8; margin: 30px 0 0; }
   #nav ul 			 {	display: inline; list-style: none;  margin:0px; padding:0px; height:42px; line-height:42px; clear:both;   }
   #nav ul li 		 { float: left;
   display: inline;
@@ -45,6 +66,22 @@ border-top: 1px solid #D8D8D8; }
   #nav ul li a 		 { display:block; text-decoration:none; color: #fff;
   }
   #nav ul li a:hover { }
+  
+  #menu-pages {
+  	float: left;
+	width: 210px;
+	padding-right: 40px;
+  }
+  
+  #menu-category {
+  	float: left;
+	width: 210px;
+	padding-right: 30px;
+  }
+  
+  #menu-category ul, #menu-pages ul {
+  	 list-style-type: none;
+  }
   	
 /* footer styles */
   #footer-area 					{ width:100%; display:inline; float:left; padding-top:10px; margin-top:20px; clear:both; background:url(../images/light/bg-row.png) top left  repeat-x; }

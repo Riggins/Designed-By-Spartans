@@ -45,7 +45,39 @@
     	<div id="logo">
         	<a href="<?php echo home_url( '/' ); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
             
-            	<center><h1>Designed by Spartans</h1></center>
+            	<h1 id="site-title">Designed by Spartans</h1>
+            	
+            	<div id="menu-pages" class="menu">
+					<ul>
+						<li><a href="http://imbalance2.wpshower.com/">Home</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Discussions</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Popular</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Jobs</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Register</a></li>
+					</ul>
+            	</div>
+            	
+            	<div id="menu-category" class="menu">
+					<ul id="menu-category" class="menu">
+						<li><a href="http://imbalance2.wpshower.com/">Graphic Design</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Industrial Design</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Animation</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Art</a></li>
+						<li><a href="http://imbalance2.wpshower.com/">Other shit</a></li>
+					</ul>
+            	</div>
+            	
+            	<div id="search">
+					<form role="search" method="get" id="searchform" action="http://imbalance2.wpshower.com/">
+						<div>
+						<input type="search" value="" name="s" id="s" placeholder="Search...">
+						</div>
+						</form>			
+						<div id="header-right"><div class="menu"><ul id="menu-top-right" class="menu">
+					<li><a href="http://twitter.com/#!/wpshower">Twitter</a></li>
+					<li><a href="http://www.facebook.com/wpshower">Facebook</a></li>
+					</ul></div></div>
+				</div>
             
                  <!--<?php if ($gridly_logo != '') {?>
                  	 <img src="<?php echo $gridly_logo; ?>" alt="<?php bloginfo('sitename'); ?>">
@@ -55,13 +87,12 @@
             </a>
             
        </div>
-        
                 
-       <?php if ( has_nav_menu( 'main_nav' ) ) { ?>
+      <!-- <?php if ( has_nav_menu( 'main_nav' ) ) { ?>
   		 <div id="nav"><?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?></div>
        <?php } else { ?>
  	 	 <div id="nav"><ul><?php wp_list_pages("depth=1&title_li=");  ?></ul></div>
-	   <?php } ?>
+	   <?php } ?>-->
 
    </div>
 <!-- // header -->           
