@@ -11,6 +11,7 @@
     <!-- styles -->
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/reset.css" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/skeleton.css"/> 
 
     <?php  $options = get_option('plugin_options');
 			$gridly_color_scheme = $options['gridly_color_scheme'];
@@ -39,44 +40,46 @@
 
 <body <?php body_class(); ?>>
 	
+<div class="container">	
 <div id="wrap">
 	<div id="header">
-        
-    	<div id="logo">
-        	<a href="<?php echo home_url( '/' ); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-            
-            	<h1 id="site-title">Designed by Spartans</h1>
-            	
-            	<div id="menu-pages" class="menu">
-					<ul>
-						<li><a href="http://imbalance2.wpshower.com/">Home</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Discussions</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Popular</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Jobs</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Register</a></li>
-					</ul>
+       
+            	<div id="menu-left">
+            		<div id="logo">
+            		<h1><a href="<?php echo home_url(); ?>">Designed by<br/> Spartans</a></h1>
+            		<h3 style="color: #F8F029;"><?php echo bloginfo('description');?></h3>
+            		</div>
             	</div>
             	
-            	<div id="menu-category" class="menu">
-					<ul id="menu-category" class="menu">
-						<li><a href="http://imbalance2.wpshower.com/">Graphic Design</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Industrial Design</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Animation</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Art</a></li>
-						<li><a href="http://imbalance2.wpshower.com/">Other shit</a></li>
-					</ul>
-            	</div>
             	
-            	<div id="search">
-					<form role="search" method="get" id="searchform" action="http://imbalance2.wpshower.com/">
-						<div>
-						<input type="search" value="" name="s" id="s" placeholder="Search...">
-						</div>
+            	<div >
+	            	<div id="menu-pages" class="menu">
+						<ul>
+							<li><a href="<?php echo home_url(); ?>">Home</a></li>
+							<li><a href="<?php echo home_url(); ?>/discussions">Discussions</a></li>
+							<li><a href="<?php echo home_url(); ?>/popular">Popular</a></li>
+							<li><a href="http://imbalance2.wpshower.com/">Jobs</a></li>
+							<li><?php wp_loginout();?></li>
+						</ul>
+	            	</div>
+	            	
+	            	<div  class="menu">
+						<ul id="menu-category" class="menu">
+							<li><a href="http://imbalance2.wpshower.com/">Animation</a></li>
+							<li><a href="http://imbalance2.wpshower.com/">Art</a></li>
+							<li><a href="http://imbalance2.wpshower.com/">Graphic Design</a></li>
+							<li><a href="http://imbalance2.wpshower.com/">Industrial Design</a></li>
+							<li><a href="http://imbalance2.wpshower.com/">Other shit</a></li>
+						</ul>
+	            	</div>
+	            	
+	            	<div id="search">
+						<form role="search" method="get" id="searchform" action="http://imbalance2.wpshower.com/">
+							<div>
+							<input type="search" value="" name="s" id="s" placeholder="Search...">
+							</div>
 						</form>			
-						<div id="header-right"><div class="menu"><ul id="menu-top-right" class="menu">
-					<li><a href="http://twitter.com/#!/wpshower">Twitter</a></li>
-					<li><a href="http://www.facebook.com/wpshower">Facebook</a></li>
-					</ul></div></div>
+					</div>
 				</div>
             
                  <!--<?php if ($gridly_logo != '') {?>
@@ -85,8 +88,7 @@
                        <img src="<?php echo get_template_directory_uri(); ?>/images/light/logo.png" alt="<?php bloginfo('sitename'); ?>">
                  <?php } ?>-->
             </a>
-            
-       </div>
+           
                 
       <!-- <?php if ( has_nav_menu( 'main_nav' ) ) { ?>
   		 <div id="nav"><?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?></div>

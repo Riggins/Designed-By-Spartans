@@ -1,5 +1,25 @@
 <?php get_header(); ?>
+	
+	<div class="content">
 
+		<?php
+		if(isset($_GET['author_name'])) :
+		$curauth = get_userdatabylogin($author_name);
+		else :
+		$curauth = get_userdata(intval($author));
+		endif;
+		?>
+		
+		<h2>About: <?php echo $curauth->nickname; ?></h2>
+		<dl>
+		<dt>Website</dt>
+		<dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
+		<dt>Profile</dt>
+		<dd><?php echo $curauth->user_description; ?></dd>
+		</dl>
+		<h2>Posts by <?php echo $curauth->nickname; ?>:</h2>
+
+	</div>
 
 <?php if (have_posts()) : ?>
 <div id="post-area">
@@ -27,16 +47,12 @@
 </div>
 <?php else : ?>
 <?php endif; ?>
-    
-<?php next_posts_link('<p class="view-older">View Older Entries</p>') ?>
+
+	
+
+	</div>
+	
+	<?php// get_sidebar(); ?>
 
 
-<script>
-	$(document).ready(function(){
-	    $('#post-area .post').fadeOut().hide();
-	    $('#post-area .post').delay().fadeIn(300);
-	});
-</script>
-    
- 
 <?php get_footer(); ?>
