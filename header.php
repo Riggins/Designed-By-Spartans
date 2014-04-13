@@ -58,6 +58,7 @@
 							<li><a href="<?php echo home_url(); ?>">Home</a></li>
 							<li><a href="<?php echo home_url(); ?>/discussions">Discussions</a></li>
 							<li><a href="<?php echo home_url(); ?>/popular">Popular</a></li>
+							<li><a href="<?php echo home_url(); ?>/events">Events</a></li>
 							<li><a href="http://imbalance2.wpshower.com/">Jobs</a></li>
 							<li><?php wp_loginout();?></li>
 						</ul>
@@ -74,11 +75,10 @@
 	            	</div>
 	            	
 	            	<div id="search">
-						<form role="search" method="get" id="searchform" action="http://imbalance2.wpshower.com/">
+						
 							<div>
-							<input type="search" value="" name="s" id="s" placeholder="Search...">
+							<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 							</div>
-						</form>			
 					</div>
 				</div>
             

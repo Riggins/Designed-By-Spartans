@@ -1,5 +1,22 @@
 <?php get_header(); ?>
 
+<div class="content system-message">
+<center>
+	<?php if ( is_user_logged_in() ) { ?>
+    	<?php echo 'Welcome, registered user!'; ?>
+    	
+    	<li><a href="<?php echo home_url()?>/wp-admin/">Dashboard</a></li>
+    	 <li><a href="<?php echo home_url()?>/wp-admin/post-new.php">New post</a></li>
+    	 <?php edit_post_link('Edit post', '<li>', '</li>'); ?>
+    	 <li><a href="<?php get_author_link( true, get_current_user_id() ); ?>">Your profile</a></li>
+    	
+	<?php } else { ?>
+		<h3>Hey! Are you an art student at SJSU?</h3>
+		<h4>Sign up to showcase your work and get feedback</h4>
+    	<a href="<?php bloginfo('wpurl'); ?>/wp-login.php?action=register"><?php _e('Register') ?></a>
+	<?php } ?>
+</center>
+</div>
 
 <?php if (have_posts()) : ?>
 <div id="post-area">
