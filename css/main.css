@@ -1,82 +1,100 @@
-/* Typography */
-h1 {
-  font-size: 36px;
-  line-height: 41px;
-  color: #000000;
-  padding: 0px;
-  margin: 0px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  margin-top: 5px; }
+/* BORDER RADIUS MIXIN */
+/* Usage: @include border-radius(5px); */
+/* TRANSITION MIXIN */
+/* Usage: @include transition(all, 0.2s, ease-in-out); */
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
 
-h2 {
-  font-size: 20px;
-  line-height: 23px;
-  color: #000000;
-  padding: 0px;
-  margin: 0px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  margin-top: 10px; }
-
-h3 {
-  font-size: 15px;
-  line-height: 25px;
-  color: #858585;
-  padding: 0px;
-  margin: 0px;
-  font-weight: normal; }
-
-h4 {
-  font-size: 15px;
-  line-height: 25px;
-  color: #000000;
-  padding: 0px;
-  margin: 0px;
-  font-weight: normal;
-  font-weight: bold; }
-
-h5 {
-  font-size: 13px;
-  line-height: 22px;
-  color: #000000;
-  padding: 0px;
-  margin: 0px;
-  font-weight: normal; }
-
-h6 {
-  font-size: 12px;
-  line-height: 22px;
-  color: #858585;
-  padding: 0px;
-  margin: 0px;
-  font-weight: normal; }
-
-p {
-  font-size: 12px;
-  color: #454545;
-  line-height: 18px;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  font-family: 'Helvetica',Arial, Helvetica, sans-serif; }
+/*Typography*/
+body {
+  line-height: 1.6;
+  background: #fff url("../images/brickwall.png") repeat; }
 
 /* Navigation */
 nav {
-  display: inline; }
-  nav h1 {
-    display: inline; }
+  /*display: inline;*/
+  margin: 50px 0; }
+  nav h4 {
+    display: inline;
+    font-weight: bold; }
   nav ul {
-    display: inline; }
+    display: inline;
+    margin: 0 auto; }
     nav ul li {
       display: inline;
-      margin-left: 15px; }
+      margin-right: 15px; }
 
-/* Homepage boxes */
-.homepage-box {
-  background: #000;
-  height: auto; }
+.account-widget {
+  float: right; }
+  .account-widget .account-image {
+    width: 40px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background-clip: padding-box; }
 
-.homepage-box-text {
-  padding: 10px; }
+/* PERK UP ANIMATION */
+.perk-up {
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out; }
+
+.perk-up:hover {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background-clip: padding-box;
+  margin: -10px 0 0;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
+
+/* Blog Listings */
+.blog-listing {
+  background: #5B5B5B;
+  padding: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  margin: 0 0 10px; }
+  .blog-listing .title {
+    color: #fff; }
+  .blog-listing .text {
+    color: #B2B2B2;
+    display: block; }
+
+/* Calendar */
+.cal-item {
+  background: #484848;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  /*padding: 7px 10px 0;*/
+  height: auto;
+  margin: 0 0 5px; }
+  .cal-item .cal-date {
+    color: #fff;
+    width: 65px;
+    height: 100%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    background: #E43838;
+    padding: 7px; }
+  .cal-item .cal-title {
+    float: left;
+    color: #E43838;
+    padding: 7px 10px 0; }
+  .cal-item .cal-text {
+    color: #6E6E6E;
+    display: block; }
