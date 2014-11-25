@@ -1,0 +1,9 @@
+/* Made in California */
+/* Site design by Nick Wittwer */
+/* 2013 */
+/* http://nickwittwer.com */
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery, Foundation 4, WordPress
+  Software: Espresso (Mac)

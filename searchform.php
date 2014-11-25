@@ -1,3 +1,3 @@
-<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-	                <input type="text" value="" name="s" id="nav-bar-search" tabindex="1" />
-	       		 </form>
+<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<input type="text" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="Search..." tabindex="1" />
+</form>

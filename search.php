@@ -16,7 +16,7 @@
 
 						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 						    <div><label class="screen-reader-text" for="s">Search for:</label>
-						        <input type="text" value="<?php echo $key; ?>" name="s" id="s" style="margin-bottom: 0;"/>
+						        <input type="text" value="<?php echo $key; ?>" name="s" id="s" />
 						        <input type="submit" class="search-btn" id="searchsubmit" value="Search" />
 						    </div>
 						</form>
@@ -39,7 +39,7 @@
 								</header> <!-- end article header -->
 					
 								<section class="entry-content">
-								    <p><?php echo the_excerpt(); ?></p>
+								    <p><?php echo get_excerpt(320); ?></p>
 					
 								</section> <!-- end article section -->
 						
@@ -55,7 +55,7 @@
 							<!-- <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?> -->
 							
 							<!-- USE THIS INSTEAD -->
-							
+							<?php kriesi_pagination();?>
 						   		
 						   		<br/>
 					
