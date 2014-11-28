@@ -1,7 +1,8 @@
 <?php get_header(); ?>
-<br/>
-<?php if ( !is_user_logged_in() ) { ?>
-<!-- USER ISN'T LOGGED IN -->
+
+
+<!--<?php if ( !is_user_logged_in() ) { ?>
+<!-- USER ISN'T LOGGED IN --*>
 <div id="hero">
     <div class="row section">
         <div class="large-12 columns">
@@ -11,13 +12,13 @@
             <div class="large-6 columns section">
                 <div class="hero-left-box">
                     <!--<h3>Email (coming soon)</h3>
-						<h4>Get our favorite content this week from around the web emailed to you every Saturday.</h4><br/><br/>-->
+						<h4>Get our favorite content this week from around the web emailed to you every Saturday.</h4><br/><br/>--*>
             </div>
             <div class="large-6 columns section">
                 <div class="hero-right-box">
                     	<h3>Sign up</h3>
 
-                    	<h4>Join our community of curators and help make WeeklyLift awesome!</h4>
+                    	<h4>Join our community of curators and help make DBS awesome!</h4>
                     <br/>
                     <?php if (get_option( 'users_can_register')) : ?>	<a href="<?php bloginfo('wpurl'); ?>/wp-login.php?action=register"><button><span class="">Sign up</span></button></a>
 
@@ -28,24 +29,16 @@
     </div>
 </div>
 <?php } else { ?>
-<!-- USER IS LOGGED IN -->
-<!--<div class="row">
-		<div class="show-for-small small-12 columns center">
-			<a href="mailto:team@halfbake.me?subject=Post to WorkGrid"><button><span class="">Upload Workspace</span></button></a>
-		</div>
-	</div>-->
-<div class="show-for-small">
-    <br/>
-    <hr/>
+
+<?php } ?>-->
+
+<div class="row">
+	<div class="large-12 columns">
+	    <h2>Welcome back, <?php global $current_user; if ( isset($current_user) ) { echo $current_user->user_login; } ?>!</h2>
+	</div>
 </div>
-<?php } ?>
-<!-- Display Recent Articles -->
-<!--<div class="row">
-    <div class="large-12 columns">
-        	<h2>Welcome back, <?php global $current_user; if ( isset($current_user) ) { echo $current_user->user_login; } ?>!</h2>
-    </div>
-</div>
-<hr/>-->
+<hr/>
+
 <div class="row">
 
     <!-- Main Content -->
@@ -86,8 +79,4 @@
 </div><!-- end row -->
 
 
-<!-- Display Recent Pictures -->
 <?php get_footer(); ?>
-</body>
-
-</html>

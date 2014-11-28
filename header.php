@@ -31,8 +31,8 @@
 		
 		
 
-		<meta name="keywords" content="WeeklyLift, workspaces, workplace, workplaces, inspiring workspace, clean workspace" />
-		<meta name="copyright" content="WeeklyLift. Copyright (c) 2013" />
+		<meta name="keywords" content="Designed by Spartans, sjsu, san jose state, sjsu design, san jose state design, sjsu designers, san jose state designers" />
+		<meta name="copyright" content="Designed by Spartans" />
 		
 		<!-- === Template Styles === -->
 		<!--<link href="<?php bloginfo('template_url'); ?>/css/style.css" media="screen" rel="stylesheet" type="text/css" />-->
@@ -43,6 +43,8 @@
 		<link href="<?php bloginfo('template_url'); ?>/css/foundation.css" media="screen" rel="stylesheet" type="text/css" />
 		
 		<link href="<?php bloginfo('template_url'); ?>/css/app.css" media="screen" rel="stylesheet" type="text/css" />
+		
+		<!--<link href="<?php bloginfo('template_url'); ?>/css/animsition.min.css" media="screen" rel="stylesheet" type="text/css" />-->
 		
 	
 		<!--=== Apple Homescreen Icons ===-->
@@ -61,43 +63,14 @@
   		
   		
   		<!-- jQuery -->
-  		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js'></script>
-  		<script src="<?php bloginfo('template_url'); ?>/js/modernizr.js"></script>
-  		<script src="<?php bloginfo('template_url'); ?>/js/app.js"></script>
+  		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+  		<!--<script src="<?php bloginfo('template_url'); ?>/js/modernizr.js"></script>-->
   		
+  		<!--<script src="<?php bloginfo('template_url'); ?>/js/jquery.animsition.min.js"></script>-->
   		
-  		<!-- Fancybox -->
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/apps/fancybox/jquery.fancybox.js"></script> 
-		<link href="<?php bloginfo('template_url'); ?>/apps/fancybox/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css" />
-
-		<script>
-//			$(document).ready(function() {
-//				$(".fancybox").fancybox({
-//				
-//					beforeLoad: function() {
-//					            this.title = $(this.element).attr('caption');
-//					        }
-//				
-//					openEffect	: 'fade',
-//					closeEffect	: 'fade',
-//					nextEffect: 'none',
-//					prevEffect: 'none',
-//					'titlePosition' : 'inside'
-//				});
-//			});
-			
-			
-			$(".fancybox")
-			    .attr('rel', 'gallery')
-			    .fancybox({
-			        beforeLoad: function() {
-			            this.title = $(this.element).attr('caption');
-			        }
-			    });
-			
-		</script>
-  		
-  		
+  		<script src="<?php bloginfo('template_url'); ?>/js/nav.js"></script>
+ 
+ 
 	  		<!--[if lt IE 9]>
 	  				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	  		<![endif]-->
@@ -135,22 +108,9 @@
 	</head>
 	
 	<body>
-	
-	
-	<!--=== Header and Nav ===-->
-	
-		<!-- show cover page if is home page -->
-		<?php if ( is_home() and !is_paged() ) { ?>
-		<?php } ?>
 
 	<!-- NAVIGATION -->
-	<div class="row"
-		<div class="large-12 columns">
+		<div class="animsition">
 			<?php include('navigation.php'); ?>
-		</div>
-	</div>
-	
-	
-	<!-- End Header -->
-	<div id="content">
+
 	

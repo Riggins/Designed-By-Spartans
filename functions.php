@@ -1,5 +1,11 @@
 <?php
 
+// Disable Default jQuery 
+if( !is_admin()){
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"), false, '1.3.2');
+	wp_enqueue_script('jquery');
+}
 
 // ------------------------Admin Alerts/Messages---------------------------//
 // Display Theme Information Widget (Dashboard)
@@ -20,272 +26,6 @@ function wpc_add_dashboard_widgets() {
 	wp_add_dashboard_widget('wp_dashboard_widget', 'Theme Information', 'wpc_dashboard_widget_function');
 }
 add_action('wp_dashboard_setup', 'wpc_add_dashboard_widgets' );
-
-
-// ------------------------Theme Settings---------------------------//
-
-$themename = "Times Settings";
-$shortname = "nt";
-
-$categories = get_categories('hide_empty=0&orderby=name');
-$wp_cats = array();
-foreach ($categories as $category_list ) {
-       $wp_cats[$category_list->cat_ID] = $category_list->cat_name;
-}
-array_unshift($wp_cats, "Choose a category"); 
-
-$options = array (
- 
-array( "name" => $themename." Options",
-	"type" => "title"),
-
-
-// GENERAL SECTION
-array( "name" => "General",
-	"type" => "section"),
-array( "type" => "open"),
- 
-array( "name" => "Colour Scheme",
-	"desc" => "Select the colour scheme for the theme",
-	"id" => $shortname."_color_scheme",
-	"type" => "select",
-	"options" => array("blue", "red", "green"),
-	"std" => "blue"),
-	
-array( "name" => "Logo URL",
-	"desc" => "Enter the link to your logo image",
-	"id" => $shortname."_logo",
-	"type" => "text",
-	"std" => ""),
-	
-array( "name" => "Custom Message",
-	"desc" => "Leave a custom message!",
-	"id" => $shortname."_custom_message",
-	"type" => "textarea",
-	"std" => ""),		
-
-// HOMEPAGE
-array( "type" => "close"),
-array( "name" => "Homepage",
-	"type" => "section"),
-array( "type" => "open"),
-
-array( "name" => "Homepage header image",
-	"desc" => "Enter the link to an image used for the homepage header.",
-	"id" => $shortname."_header_img",
-	"type" => "text",
-	"std" => ""),
-	
-array( "name" => "Homepage featured category",
-	"desc" => "Choose a category from which featured posts are drawn",
-	"id" => $shortname."_feat_cat",
-	"type" => "select",
-	"options" => $wp_cats,
-	"std" => "Choose a category"),
-	
-array( "type" => "close"),
-array( "name" => "Footer",
-	"type" => "section"),
-array( "type" => "open"),
-
-// FOOTER SECTION
-array( "name" => "Footer copyright text",
-	"desc" => "Enter text used in the right side of the footer. It can be HTML",
-	"id" => $shortname."_footer_text",
-	"type" => "text",
-	"std" => ""),
-	
-array( "name" => "Google Analytics Code",
-	"desc" => "You can paste your Google Analytics or other tracking code in this box. This will be automatically added to the footer.",
-	"id" => $shortname."_ga_code",
-	"type" => "textarea",
-	"std" => ""),	
-	
-array( "name" => "Custom Favicon",
-	"desc" => "A favicon is a 16x16 pixel icon that represents your site; paste the URL to a .ico image that you want to use as the image",
-	"id" => $shortname."_favicon",
-	"type" => "text",
-	"std" => get_bloginfo('url') ."/favicon.ico"),	
-	
-array( "name" => "Feedburner URL",
-	"desc" => "Feedburner is a Google service that takes care of your RSS feed. Paste your Feedburner URL here to let readers see it in your website",
-	"id" => $shortname."_feedburner",
-	"type" => "text",
-	"std" => get_bloginfo('rss2_url')),
-
- 
-array( "type" => "close")
- 
-);
-
-
-function mytheme_add_admin() {
- 
-global $themename, $shortname, $options;
- 
-if ( $_GET['page'] == basename(__FILE__) ) {
- 
-	if ( 'save' == $_REQUEST['action'] ) {
- 
-		foreach ($options as $value) {
-		update_option( $value['id'], $_REQUEST[ $value['id'] ] ); }
- 
-foreach ($options as $value) {
-	if( isset( $_REQUEST[ $value['id'] ] ) ) { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } else { delete_option( $value['id'] ); } }
- 
-	header("Location: admin.php?page=functions.php&saved=true");
-die;
- 
-} 
-else if( 'reset' == $_REQUEST['action'] ) {
- 
-	foreach ($options as $value) {
-		delete_option( $value['id'] ); }
- 
-	header("Location: admin.php?page=functions.php&reset=true");
-die;
- 
-}
-}
- 
-add_menu_page($themename, $themename, 'administrator', basename(__FILE__), 'mytheme_admin');
-}
-
-function mytheme_add_init() {
-
-$file_dir=get_bloginfo('template_directory');
-wp_enqueue_style("functions", $file_dir."/functions/functions.css", false, "1.0", "all");
-wp_enqueue_script("rm_script", $file_dir."/functions/rm_script.js", false, "1.0");
-
-}
-function mytheme_admin() {
- 
-global $themename, $shortname, $options;
-$i=0;
- 
-if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
- 
-?>
-<div class="wrap rm_wrap">
-<h2><?php echo $themename; ?></h2>
- 
-<div class="rm_opts">
-<form method="post">
-<?php foreach ($options as $value) {
-switch ( $value['type'] ) {
- 
-case "open":
-?>
- 
-<?php break;
- 
-case "close":
-?>
- 
-</div>
-</div>
-<br />
-
- 
-<?php break;
- 
-case "title":
-?>
-<p>Enjoy the beautiful settings below! NOTE: Not all functions work yet!</p>
-
- 
-<?php break;
- 
-case 'text':
-?>
-
-<div class="rm_input rm_text">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
- 	<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'])  ); } else { echo $value['std']; } ?>" />
- <small><?php echo $value['desc']; ?></small><div class="clearfix"></div>
- 
- </div>
-<?php
-break;
- 
-case 'textarea':
-?>
-
-<div class="rm_input rm_textarea">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
- 	<textarea name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id']) ); } else { echo $value['std']; } ?></textarea>
- <small><?php echo $value['desc']; ?></small><div class="clearfix"></div>
- 
- </div>
-  
-<?php
-break;
- 
-case 'select':
-?>
-
-<div class="rm_input rm_select">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-	
-<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
-<?php foreach ($value['options'] as $option) { ?>
-		<option <?php if (get_settings( $value['id'] ) == $option) { echo 'selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?>
-</select>
-
-	<small><?php echo $value['desc']; ?></small><div class="clearfix"></div>
-</div>
-<?php
-break;
- 
-case "checkbox":
-?>
-
-<div class="rm_input rm_checkbox">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-	
-<?php if(get_option($value['id'])){ $checked = "checked=\"checked\""; }else{ $checked = "";} ?>
-<input type="checkbox" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="true" <?php echo $checked; ?> />
-
-
-	<small><?php echo $value['desc']; ?></small><div class="clearfix"></div>
- </div>
-<?php break; 
-case "section":
-
-$i++;
-
-?>
-
-<div class="rm_section">
-<div class="rm_title"><h3><img src="<?php bloginfo('template_directory')?>/functions/images/trans.png" class="inactive" alt=""><?php echo $value['name']; ?></h3><span class="submit"><input name="save<?php echo $i; ?>" type="submit" value="Save changes" />
-</span><div class="clearfix"></div></div>
-<div class="rm_options">
-
- 
-<?php break;
- 
-}
-}
-?>
- 
-<input type="hidden" name="action" value="save" />
-</form>
-<form method="post">
-<p class="submit">
-<input name="reset" type="submit" value="Reset" />
-<input type="hidden" name="action" value="reset" />
-</p>
-</form>
- </div> 
- 
-
-<?php
-}
-?>
-<?php
-add_action('admin_init', 'mytheme_add_init');
-add_action('admin_menu', 'mytheme_add_admin');
 
 // ------------------------Custom Excerpt Length---------------------------//
 function get_excerpt($count){
@@ -313,22 +53,6 @@ function catch_that_image() {
 //    $first_img = get_bloginfo('template_directory').'/img/default.png';
 //  }
 //  return $first_img;
-}
-
-// ------------------------Custom Author---------------------------//
-// display custom author name
-add_filter( 'the_author', 'guest_author_name' );
-add_filter( 'get_the_author_display_name', 'guest_author_name' );
-
-function guest_author_name( $name ) {
-global $post;
-
-$author = get_post_meta( $post->ID, 'author', true );
-
-if ( $author )
-$name = $author;
-
-return $name;
 }
 
 
@@ -405,11 +129,6 @@ function custom_login() {
 	echo $files;
 }
 add_action('login_head', 'custom_login');
-
-
-
-
-
 
 // ------------------------Pagination---------------------------//
 // http://www.kriesi.at/archives/how-to-build-a-wordpress-post-pagination-without-plugin
@@ -516,17 +235,6 @@ function change_author_permalinks() {
 }
 add_action('init','change_author_permalinks');
 
-
-
-// ------------------------Custom Login Page---------------------------//
-// ------------------------http://wordpress.org/support/topic/how-to-change-from-wp-loginphp-to-login---------------------------//
-//add_filter('site_url',  'wplogin_filter', 10, 3);
-//function wplogin_filter( $url, $path, $orig_scheme )
-//{
-// $old  = array( "/(wp-login\.php)/");
-// $new  = array( "login");
-// return preg_replace( $old, $new, $url, 1);
-//}
 
 // ------------------------Custom Next/Prev Post Link classes---------------------------//
 // ------------------------http://css-tricks.com/snippets/wordpress/add-class-to-links-generated-by-next_posts_link-and-previous_posts_link/---------------------------//
@@ -766,7 +474,58 @@ add_filter('get_the_excerpt', 'custom_wp_trim_excerpt');
 
 
 
+// -------------------------Remove class from post edit link--------------------------//
+function custom_edit_post_link($output) {
+ $output = str_replace('class="post-edit-link"', 'class=""', $output);
+ return $output;
+}
+add_filter('edit_post_link', 'custom_edit_post_link');
 
+
+// -------------------------User Profile Settings--------------------------//
+add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+
+function my_show_extra_profile_fields( $user ) { ?>
+
+	<h3>Extra profile information</h3>
+
+	<table class="form-table">
+
+		<tr>
+			<th><label for="dribbble">Dribbble</label></th>
+
+			<td>
+				<input type="text" name="dribbble" id="dribbble" value="<?php echo esc_attr( get_the_author_meta( 'dribbble', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your Dribbble username.</span>
+			</td>
+		</tr>
+		
+		<tr>
+			<th><label for="twitter">Twitter</label></th>
+
+			<td>
+				<input type="text" name="twitter" id="twitter" value="<?php echo esc_attr( get_the_author_meta( 'twitter', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your Twitter username.</span>
+			</td>
+		</tr>
+
+	</table>
+
+<?php }
+
+add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+
+function my_save_extra_profile_fields( $user_id ) {
+
+	if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+
+		// Time to save the meta defined above!
+		update_usermeta( $user_id, 'dribbble', $_POST['dribbble'] );
+		update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
+}
 
 
 ?>

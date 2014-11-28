@@ -21,8 +21,7 @@
 			
 					<div class="large-3 columns">
 						<h4>Get Involved</h4>
-						<a href="<?php echo site_url(); ?>/discussions">Discussions Board</a><br />
-						<a href="#">Slack Channel (Soon)</a>
+						
 					</div>
 				</div>
 		</div>				
@@ -64,25 +63,78 @@
 	
 	</div><!-- end content div -->
 	
+	
+	
+	
+	
+	</main><!-- end main content for navigation -->
+ 
+<nav id="cd-lateral-nav">
+		<ul class="cd-navigation">
+			<li class="item-has-children">
+				<a href="#0">Designs</a>
+				<ul class="sub-menu">
+					<li><a href="<?php echo site_url(); ?>/designs">Designs</a></li>
+					<li><a href="<?php echo site_url(); ?>/">Mocks</a></li>
+					<li><a href="<?php echo site_url(); ?>/">Finals</a></li>
+				</ul>
+			</li> <!-- item-has-children -->
+
+			<li class="item-has-children">
+				<a href="#0">Events</a>
+				<ul class="sub-menu">
+					<li><a href="<?php echo site_url(); ?>/events">San Jose</a></li>
+					<li><a href="#">More Soon</a></li>
+				</ul>
+			</li> <!-- item-has-children -->
+
+			<li class="item-has-children">
+				<a href="#0">Jobs</a>
+				<ul class="sub-menu">
+					<li><a href="<?php echo site_url(); ?>/jobs">San Jose</a></li>
+				</ul>
+			</li> <!-- item-has-children -->
+			
+			<li class="item-has-children">
+				<a href="#0">Discussions</a>
+				<ul class="sub-menu">
+					<li><a href="<?php echo site_url(); ?>/discussions">Discussions</a></li>
+					<li><a href="#">Slack Channel (Soon)</a></li>
+				</ul>
+			</li> <!-- item-has-children -->
+		</ul> <!-- cd-navigation -->
+
+	
+		<ul class="cd-navigation cd-single-item-wrapper">
+			<li><a href="#0">Tour</a></li>
+			<li><a href="#0">Login</a></li>
+			<li><a href="#0">Register</a></li>
+			<li><a href="#0">Pricing</a></li>
+			<li><a href="#0">Support</a></li>
+		</ul> <!-- cd-single-item-wrapper -->
+
+		<ul class="cd-navigation cd-single-item-wrapper">
+			<li><a href="#0">Journal</a></li>
+			<li><a href="#0">FAQ</a></li>
+			<li><a href="#0">Terms &amp; Conditions</a></li>
+			<li><a href="#0">Careers</a></li>
+			<li><a href="#0">Students</a></li>
+		</ul> <!-- cd-single-item-wrapper -->
+	</nav>
+	
+	
+	
+			
 					
 			<script src="<?php bloginfo('template_url'); ?>/js/retina.js"></script>
 			
-			<script src="<?php bloginfo('template_url'); ?>/js/foundation/foundation.js"></script>
+			<!--<script src="<?php bloginfo('template_url'); ?>/js/app.js"></script>-->
 			
-			<script src="<?php bloginfo('template_url'); ?>/js/foundation/foundation.tooltips.js"></script>
-			
-			<script src="<?php bloginfo('template_url'); ?>/js/foundation/foundation.section.js"></script>
-			
-			<script src="<?php bloginfo('template_url'); ?>/js/jquery.instagram.js"></script>
-			
-			
-			
-			<script>
-			  $(document).foundation();
-			</script>
-
+			<script src="<?php bloginfo('template_url'); ?>/js/pace.min.js"></script>
 			
 			<?php wp_footer(); ?>
+	</div>
+
 
 	</body>
 
