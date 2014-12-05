@@ -106,11 +106,7 @@
 
 	
 		<ul class="cd-navigation cd-single-item-wrapper">
-			<li><a href="#0">Tour</a></li>
-			<li><a href="#0">Login</a></li>
-			<li><a href="#0">Register</a></li>
-			<li><a href="#0">Pricing</a></li>
-			<li><a href="#0">Support</a></li>
+			<li><a href="<?php echo site_url();?>/tour">Tour</a></li>
 		</ul> <!-- cd-single-item-wrapper -->
 
 		<ul class="cd-navigation cd-single-item-wrapper">
@@ -126,11 +122,25 @@
 	
 			
 					
-			<script src="<?php bloginfo('template_url'); ?>/js/retina.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/retina.js"></script>
 			
-			<!--<script src="<?php bloginfo('template_url'); ?>/js/app.js"></script>-->
+		<!-- Google Analytics Here -->
+  		<?php if (!current_user_can('level_10')) { ?>
+  		
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			
-			<script src="<?php bloginfo('template_url'); ?>/js/pace.min.js"></script>
+			ga('create', 'UA-41130431-7', 'auto');
+			ga('send', 'pageview');
+			
+			</script>
+  		
+  		<?php } ?>
+  		<!-- end analytics -->
+			
 			
 			<?php wp_footer(); ?>
 	</div>

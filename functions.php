@@ -1,11 +1,30 @@
 <?php
 
-// Disable Default jQuery 
-if( !is_admin()){
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"), false, '1.3.2');
-	wp_enqueue_script('jquery');
+// ------------------------Get rid of old WP jquery---------------------------//
+add_action('wp_enqueue_scripts', 'no_more_jquery');
+function no_more_jquery(){
+    wp_deregister_script('jquery');
 }
+
+// ------------------------Redirect to login page if not logged in---------------------------//
+add_action( 'parse_request', 'dmk_redirect_to_login_if_not_logged_in', 1 );
+
+function dmk_redirect_to_login_if_not_logged_in() {
+	is_user_logged_in() || auth_redirect();
+}
+
+add_filter( 'login_url', 'dmk_strip_loggedout', 1, 1 );
+
+function dmk_strip_loggedout( $login_url ) {
+	return str_replace( '%3Floggedout%3Dtrue', '', $login_url );
+}
+
+
+
+
+
+
+
 
 // ------------------------Admin Alerts/Messages---------------------------//
 // Display Theme Information Widget (Dashboard)
@@ -13,7 +32,7 @@ function wpc_dashboard_widget_function() {
 	echo "<ul><h2>Site Info</h2>
 	<li>Status: Running well.</li>
 	<li>Release Date: December 24, 2012</li>
-	<li>Version 1.8: Fixes minor display glitches (sidebar), adds support for WP Polls plugin (sidebar), updated with hNews microformat support, updated homepage design.</li>
+	<li>Version 1.0: Fixes minor display glitches (sidebar), adds support for WP Polls plugin (sidebar), updated with hNews microformat support, updated homepage design.</li>
 	</ul>
 
 	<ul><h2>Next Updates</h2>
@@ -52,8 +71,33 @@ function catch_that_image() {
 //  if(empty($first_img)){ //Defines a default image
 //    $first_img = get_bloginfo('template_directory').'/img/default.png';
 //  }
-//  return $first_img;
+  return $first_img;
 }
+
+
+
+
+
+
+
+
+
+add_action('generate_rewrite_rules', 'roots_add_rewrites');
+
+function roots_add_rewrites($content) {
+  $theme_name = next(explode('/themes/', get_stylesheet_directory()));
+  global $wp_rewrite;
+  $roots_new_non_wp_rules = array(
+    'css/(.*)'      => 'wp-content/themes/'. $theme_name . '/css/$1',
+    'js/(.*)'       => 'wp-content/themes/'. $theme_name . '/js/$1',
+    'img/(.*)'      => 'wp-content/themes/'. $theme_name . '/img/$1',
+  );
+  $wp_rewrite->non_wp_rules += $roots_new_non_wp_rules;
+}
+
+
+
+
 
 
 // ------------------------Display "time ago" if less than 24 hours old---------------------------//
@@ -123,9 +167,9 @@ function get_recent_comments($no_comments = 10, $comment_len = 70) {
 
 // ------------------------Custom Login---------------------------//
 function custom_login() {
-	$files = '<link rel="stylesheet" href="'.get_bloginfo('template_directory').'/css/login.css" />
-			  <script src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>
-	          <script src="'.get_bloginfo('template_directory').'/js/login.js"></script>';
+	$files = '<link rel="stylesheet" href="'.get_bloginfo('template_directory').'/assets/css/login.css" />
+			  <script src="'.get_bloginfo('template_directory').'/assets/js/jquery.min.js"></script>
+	          <script src="'.get_bloginfo('template_directory').'/assets/js/login.js"></script>';
 	echo $files;
 }
 add_action('login_head', 'custom_login');

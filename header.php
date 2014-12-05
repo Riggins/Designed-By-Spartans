@@ -36,15 +36,16 @@
 		
 		<!-- === Template Styles === -->
 		<!--<link href="<?php bloginfo('template_url'); ?>/css/style.css" media="screen" rel="stylesheet" type="text/css" />-->
-		<link href="<?php bloginfo('template_url'); ?>/css/typography.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="<?php bloginfo('template_url'); ?>/assets/css/typography.css" media="screen" rel="stylesheet" type="text/css" />
 		
 		<!-- Foundation -->
-		<link href="<?php bloginfo('template_url'); ?>/css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-		<link href="<?php bloginfo('template_url'); ?>/css/foundation.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="<?php bloginfo('template_url'); ?>/assets/css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
 		
-		<link href="<?php bloginfo('template_url'); ?>/css/app.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="<?php bloginfo('template_url'); ?>/assets/css/foundation.css" media="screen" rel="stylesheet" type="text/css" />
 		
-		<!--<link href="<?php bloginfo('template_url'); ?>/css/animsition.min.css" media="screen" rel="stylesheet" type="text/css" />-->
+		<link href="<?php bloginfo('template_url'); ?>/assets/css/app.css" media="screen" rel="stylesheet" type="text/css" />
+		
+		<link href="<?php bloginfo('template_url'); ?>/assets/css/animsition.min.css" media="screen" rel="stylesheet" type="text/css" />
 		
 	
 		<!--=== Apple Homescreen Icons ===-->
@@ -64,42 +65,23 @@
   		
   		<!-- jQuery -->
   		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
-  		<!--<script src="<?php bloginfo('template_url'); ?>/js/modernizr.js"></script>-->
-  		
-  		<!--<script src="<?php bloginfo('template_url'); ?>/js/jquery.animsition.min.js"></script>-->
-  		
-  		<script src="<?php bloginfo('template_url'); ?>/js/nav.js"></script>
- 
+ 		
+ 		<!-- Animsition -->
+ 		<script src="http://git.blivesta.com/animsition/js/jquery.animsition.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/app.js"></script>
+		
+		<!-- Navigation -->
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/nav.js"></script>
+ 		
  
 	  		<!--[if lt IE 9]>
 	  				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	  		<![endif]-->
   		
-  		
-  		
-  		<!-- Google Analytics Here -->
-  		<?php if (!current_user_can('level_10')) { ?>
-  		
-  			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-41130431-7', 'auto');
-			  ga('send', 'pageview');
-			</script>
-  		
-  		<?php } ?>
-  		<!-- end analytics -->
-  		
 		
+		<?php if ( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' ); ?>
 		
-		<?php
-		if ( is_singular() && comments_open() && get_option('thread_comments') )
-		  wp_enqueue_script( 'comment-reply' );
-		?>
-		
+
 		
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -110,7 +92,8 @@
 	<body>
 
 	<!-- NAVIGATION -->
-		<div class="animsition">
 			<?php include('navigation.php'); ?>
-
+				
+				<div class="animsition">
+	
 	

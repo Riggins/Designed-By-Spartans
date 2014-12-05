@@ -1,33 +1,19 @@
-<div class="large-12 columns hide-on-phones">		
-      		
-		<!-- TIME FOR TABS!!! -->		
-			<div class="section-container tabs" data-section="tabs">
-			  
-			  <section class="section">
-			    <p class="title"><a href="#">Popular</a></p>
-			    <div class="content">
-			      <ul class="no-bullet">
-	      	      		<?php 
-	      	      		$popularpost = new WP_Query( array( 'posts_per_page' => 5, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'wpb_post_views_count', 'order' => 'DESC'  ) );
-	      	      		while ( $popularpost->have_posts() ) : $popularpost->the_post();
-	      
-	      	      	
-	      	      		echo '<a href="' . get_permalink() . '"><li>' . get_the_title() . '</li></a>';
-	      	      		
-	      	      		endwhile;
-	      	      		wp_reset_postdata();
-	      	      		?>
-	      	      		
-			      	</ul>
-				</div>
-			  </section>
-			  
-			  
-			  <section class="section">
-			    <p class="title more"><a href="#">More</a></p>
-			    <div class="content">
-			      <p>Coming soon!</p>
-			      
+<h4>Upcoming Events</h4>
+<hr />
+
+
+<h4>Recent Discussions</h4>
+<hr />
+
+
+<h4>New Jobs</h4>
+<hr />
+
+<h6>Interaction Designer</h6>
+<p>We're looking for a dedicated designer to join our ranks at Company X.</p>
+
+
+  
 			      
 			      <!--
 			      <?php if ( is_single() ) { ?>
@@ -51,10 +37,6 @@
 			      		<?php echo 'Nothing to display.'; ?>
 			      <?php } wp_reset_postdata(); ?>
 			      -->
-			    
-			    </div>
-			  </section>
-	</div>
-	</div>
+
 
 	

@@ -22,7 +22,7 @@
 				<?php $redirect = '&amp;redirect_to='.urlencode(wp_make_link_relative(get_option('siteurl'))); $uri = wp_nonce_url( site_url("wp-login.php?$redirect", 'login'), 'log-in' ); ?>
 				
 				<li><a href="<?php echo $uri;?>">Login</a></li>
-				<li><a href="<?php echo $site_url(); ?>/wp-login.php?action=register">Sign Up</a></li>
+				<li><a href="<?php echo site_url(); ?>/wp-login.php?action=register">Sign Up</a></li>
 				
 			<?php } else { ?>
 				

@@ -63,8 +63,9 @@
 	<div class="large-block-grid-4 columns section">
 	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	
-		<?php include('loop-grid.php') ?>
+			<div class="large-4 medium-4 columns">
+				<?php include(TEMPLATEPATH . '/lib/loops/loop-feed.php') ?>
+			</div>
 		
 		<?php endwhile; ?>
 		

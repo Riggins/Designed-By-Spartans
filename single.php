@@ -53,7 +53,7 @@
 						      <h1><?php the_title(); ?></h1>
 						    </div>-->
 						    
-						<div class="large-3 columns">   
+						<div class="large-7 columns">   
 
 								<div class="image-wrap" id="featured-wrapper">
 								
@@ -102,7 +102,7 @@
 						</div>
 						    
 						    
-						<div class="large-9 columns" id="article">
+						<div class="large-5 columns" id="article">
 
 						
 						    <div <?php post_class() ?> id="post-<?php the_ID(); ?>">

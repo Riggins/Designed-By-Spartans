@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 
-<!--<?php if ( !is_user_logged_in() ) { ?>
-<!-- USER ISN'T LOGGED IN --*>
+<?php if ( !is_user_logged_in() ) { ?>
+<!-- USER ISN'T LOGGED IN -->
 <div id="hero">
     <div class="row section">
         <div class="large-12 columns">
@@ -12,7 +12,7 @@
             <div class="large-6 columns section">
                 <div class="hero-left-box">
                     <!--<h3>Email (coming soon)</h3>
-						<h4>Get our favorite content this week from around the web emailed to you every Saturday.</h4><br/><br/>--*>
+						<h4>Get our favorite content this week from around the web emailed to you every Saturday.</h4><br/><br/>-->
             </div>
             <div class="large-6 columns section">
                 <div class="hero-right-box">
@@ -25,12 +25,12 @@
                     <?php endif; ?>
                 </div>
             </div>
-        </div>
+		</div>
     </div>
 </div>
 <?php } else { ?>
 
-<?php } ?>-->
+<?php } ?>
 
 <div class="row">
 	<div class="large-12 columns">
@@ -48,7 +48,7 @@
         <?php $paged=( get_query_var( 'paged')) ? get_query_var( 'paged') : 1; query_posts( 'posts_per_page=9&paged=' . $paged); ?>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         	<div class="large-4 medium-4 columns">
-        		<?php include( 'loop-feed.php') ?>
+        		<?php include(TEMPLATEPATH . '/lib/loops/loop-blog.php') ?>
         	</div>
         <?php endwhile; ?>
         <?php kriesi_pagination(); ?>
@@ -61,18 +61,8 @@
      
      <!-- Sidebar -->
 	<div class="large-3 medium-3 columns">
-		<h4>Upcoming Events</h4>
-		<hr />
-		
-			<h6>Interaction Designer</h6>
-			<p>We're looking for a dedicated designer to join our ranks at Facebook.</p>
-
-		<h4>Recent Discussions</h4>
-		<hr />
-		
-		
-		<h4>New Jobs</h4>
-		<hr />
+	
+		<?php get_sidebar(); ?>
 		
 	</div>
      
