@@ -1,20 +1,24 @@
 <?php get_header(); ?>
-		
-		
-		<br/>
-							
-			<div class="row">		
-				<div class="large-12 columns center">   
-				
-					<h1>404</h1>
-					<h2>Page not found.</h2>
-					
-					<br/>
-					
-					<h4>That page may no longer exist or you just found a problem with the site. If you keep getting this error, please <a href="mailto:hi@nickwittwer.com">email me</a> and let me know.</h4>
-				
-				</div>
-			</div>
 
+	<div id="content">
+		<div id="inner-content" class="wrap cf">
+			<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+				<article id="post-not-found" class="hentry cf">
+					<header class="article-header">
+						<h1><?php _e('Epic 404 - Article Not Found', 'bonestheme'); ?></h1>
+					</header>
+					<section class="entry-content">
+						<p><?php _e('The article you were looking for was not found, but maybe try looking again!', 'bonestheme'); ?></p>
+					</section>
+					<section class="search">
+						<p><?php get_search_form(); ?></p>
+					</section>
+					<footer class="article-footer">
+						<p><?php _e('This is the 404.php template.', 'bonestheme'); ?></p>
+					</footer>
+				</article>
+			</main>
+		</div>
+	</div>
 
-	<?php get_footer(); ?>
+<?php get_footer(); ?>
