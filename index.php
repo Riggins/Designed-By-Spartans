@@ -48,7 +48,7 @@
         <?php $paged=( get_query_var( 'paged')) ? get_query_var( 'paged') : 1; query_posts( 'posts_per_page=9&paged=' . $paged); ?>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         	<div class="large-4 medium-4 columns">
-        		<?php include(TEMPLATEPATH . '/lib/loops/loop-blog.php') ?>
+        		<?php include(TEMPLATEPATH . '/loops/loop-blog.php') ?>
         	</div>
         <?php endwhile; ?>
         <?php kriesi_pagination(); ?>
