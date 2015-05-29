@@ -79,12 +79,41 @@
 	
 	</div><!-- end posts section -->
 
+	<!-- Behance Section if applicable -->
+	<?php if ( get_the_author_meta( 'behance' ) ) { ?>
+		
+		<h2>Behance</h2>
+		
+		<script src="<?php echo get_bloginfo('template_directory');?>/library/js/jquery.behance.js"></script>
+		
+		<div class="row">
+			<div id="be-grid"></div>
+		</div>
+							
+		<script>
+		  $(document).ready(function() {
+
+		    $('#be-grid').behance({
+		      apiKey: 'EgW8NEun0zQUYlzNoHc6d0FsjWRuMnlF',
+		      user: '<?php echo get_the_author_meta( 'behance' ) ?>',
+		      sort: 'featured_date',
+		      gridID: '#be-grid',
+		      cssItem: 'large-3 medium-3 columns',
+		      cssTitle: 'green',
+		      cssMore: 'button'
+		    });
+		  });
+
+		</script>
+		
+    <?php } ?>
+
 	<!-- Dribbble Section if applicable -->
 	<?php if ( get_the_author_meta( 'dribbble' ) ) { ?>
 		
 		<h2>Dribbble</h2>
 		
-		<script src="<?php echo get_bloginfo('template_directory');?>/js/jribbble.js"></script>
+		<script src="<?php echo get_bloginfo('template_directory');?>/library/js/jribbble.js"></script>
 		
 		<div class="row">
 			<div class="dribbble-feed"></div>

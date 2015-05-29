@@ -536,6 +536,15 @@ function my_show_extra_profile_fields( $user ) { ?>
 
 	<table class="form-table">
 
+    <tr>
+      <th><label for="twitter">Behance</label></th>
+
+      <td>
+        <input type="text" name="behance" id="behance" value="<?php echo esc_attr( get_the_author_meta( 'behance', $user->ID ) ); ?>" class="regular-text" /><br />
+        <span class="description">Please enter your Behance username.</span>
+      </td>
+    </tr>
+
 		<tr>
 			<th><label for="dribbble">Dribbble</label></th>
 
@@ -567,7 +576,8 @@ function my_save_extra_profile_fields( $user_id ) {
 		return false;
 
 		// Time to save the meta defined above!
-		update_usermeta( $user_id, 'dribbble', $_POST['dribbble'] );
+		update_usermeta( $user_id, 'behance', $_POST['behance'] );
+    update_usermeta( $user_id, 'dribbble', $_POST['dribbble'] );
 		update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
 }
 

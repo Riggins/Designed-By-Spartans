@@ -47,16 +47,8 @@
 		<meta name="keywords" content="Designed by Spartans, sjsu, san jose state, sjsu design, san jose state design, sjsu designers, san jose state designers" />
 		<meta name="copyright" content="Designed by Spartans" />
 		
-		<!-- === Template Styles === -->
-		<!--<link href="<?php bloginfo('template_url'); ?>/css/style.css" media="screen" rel="stylesheet" type="text/css" />-->
-		<link href="<?php bloginfo('template_url'); ?>/assets/css/typography.css" media="screen" rel="stylesheet" type="text/css" />
-		
-		<!-- Foundation -->
-		<link href="<?php bloginfo('template_url'); ?>/assets/css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-		
-		<link href="<?php bloginfo('template_url'); ?>/assets/css/foundation.css" media="screen" rel="stylesheet" type="text/css" />
-		
-		<link href="<?php bloginfo('template_url'); ?>/assets/css/app.css" media="screen" rel="stylesheet" type="text/css" />
+		<!-- === Template Styles === -->	
+		<link href="<?php bloginfo('template_url'); ?>/library/css/main.css" media="screen" rel="stylesheet" type="text/css" />
 		
 		<link href="<?php bloginfo('template_url'); ?>/assets/css/animsition.min.css" media="screen" rel="stylesheet" type="text/css" />
 
