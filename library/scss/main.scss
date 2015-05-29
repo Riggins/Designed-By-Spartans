@@ -1,0 +1,46 @@
+/******************************************************************
+Site Name: Your Site Name
+Author: Your Site Name
+URL: http://yoursite.com
+******************************************************************/
+
+
+/*********************
+IMPORTING PARTIALS
+These files are needed at the beginning so that we establish all
+our mixins, functions, and variables that we'll be using across
+the whole project.
+*********************/
+
+// Import Foundation
+@import "foundation"; /* add Zurb's Foundation framework (grid system, etc.) */
+
+// Reset using Normalize
+@import "reset"; /* fix browser inconsistencies */
+
+// Set variables and reusable mixins
+@import "config"; /* adds re-usable colors and measurements */
+@import "mixins"; /* adds a variety of useful Sass plugins */
+@import "responsive"; /* adds easy media queries */
+
+// Import typical layout sass modules
+@import "type";
+@import "links";
+@import "tables";
+@import "forms";
+@import "other";
+@import "media";
+
+// Font Awesome icons
+@import "icons"; /* easily use icons */
+
+// Specific project styles, add any section specific sass modules here
+@import "layout"; /* most of your styles go here */
+
+
+/*********************
+OPTIONAL
+Delete the // comment in front of an @import style to activate it
+*********************/
+
+// @import "blog"; /* OPTIONAL styles for blog template */

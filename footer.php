@@ -123,9 +123,10 @@
 			
 					
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/retina.js"></script>
+
 			
 		<!-- Google Analytics Here -->
-  		<?php if (!current_user_can('level_10')) { ?>
+  		<?php if(!is_user_logged_in()) { ?>
   		
 			<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
