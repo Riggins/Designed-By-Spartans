@@ -9,7 +9,7 @@
 				
 					<!-- image -->
 						<a href="<?php the_permalink(); ?>">
-							<?php include(TEMPLATEPATH . "/lib/images/thumbnail.php"); ?>
+							<?php include(TEMPLATEPATH . "/thumbnail.php"); ?>
 						</a>
 						
 					<!-- description div -->

@@ -107,7 +107,7 @@
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
-							<?php include('loop-feed.php') ?>
+							<?php include(TEMPLATEPATH . '/loops/loop-feed.php') ?>
 						   		
 						   										   				
 						<?php endwhile; ?>	

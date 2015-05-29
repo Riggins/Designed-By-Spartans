@@ -66,7 +66,7 @@
 										
 										<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 												<div class="large-4 medium-4 columns">
-													<?php include('/loops/loop-feed.php') ?>
+													<?php include(TEMPLATEPATH . '/loops/loop-feed.php') ?>
 												</div>
 											
 											<?php endwhile; ?>

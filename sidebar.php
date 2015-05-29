@@ -1,12 +1,15 @@
 <h4>Upcoming Events</h4>
+<p>Google Calendar?</p>
 <hr />
 
 
 <h4>Recent Discussions</h4>
+<p>Simple Plugin</p>
 <hr />
 
 
 <h4>New Jobs</h4>
+<p>Pulls from jobs category?</p>
 <hr />
 
 <h6>Interaction Designer</h6>

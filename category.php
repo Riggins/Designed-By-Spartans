@@ -12,7 +12,7 @@
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php if(is_category() && in_category($cat)) { ?>
 		
-			<?php include('/loops/loop-grid.php') ?>
+			<?php include(TEMPLATEPATH . '/loops/loop-grid.php') ?>
 		
 		<?php } endwhile; ?>
 		
