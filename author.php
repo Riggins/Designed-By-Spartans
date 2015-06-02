@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<meta name="robots" content="noindex,nofollow">
-
 <div class="row section">
 <div class="large-12 columns">
 
@@ -28,7 +26,7 @@
 	
 		<br/>
 		
-		<a href="<?php echo get_edit_user_link(); ?>">Edit profile</a>
+		<a href="<?php echo get_edit_user_link(); ?>"><span class="action-button">Edit profile</span></a>
 
 		<h2 rel="nofollow"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h2>
 	
@@ -60,7 +58,7 @@
 
 	<?php global $user_login; get_currentuserinfo(); if ($user_login) :?>
 	
-		<a href="javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='http://weeklylift.com/wp-admin/press-this.php',l=d.location,e=encodeURIComponent,g=f+'?u='+e(l.href.replace(/\//g,'\\/'))+'&t='+e(d.title)+'&s='+e(s)+'&v=2';function a(){if(!w.open(g,'t','toolbar=0,resizable=0,scrollbars=1,status=1,width=720,height=570')){l.href=g;}}a();void(0);">Bookmarklet (drag to bookmarks)</a>
+		<a href="http://<?php echo site_url(); ?>/wp-admin/press-this.php">Bookmarklet (drag to bookmarks)</a>
 	
 	<?php endif; ?>
 	

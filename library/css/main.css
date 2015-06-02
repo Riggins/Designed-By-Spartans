@@ -4303,13 +4303,18 @@ header.is-fixed {
 
 #cd-top-nav a {
   display: inline-block;
-  padding: .5em;
+  padding: .5em 15px;
   color: #FFF;
-  text-transform: uppercase;
-  font-weight: 600; }
+  text-transform: lowercase;
+  font-weight: 100;
+  background: #4d758f;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */ }
 
 #cd-top-nav a.current {
-  background-color: #242e30; }
+  background-color: #293e4c; }
 
 .no-touch #cd-top-nav a:hover {
   color: rgba(255, 255, 255, 0.7); }
