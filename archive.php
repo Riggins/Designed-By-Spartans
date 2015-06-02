@@ -1,139 +1,64 @@
 <?php get_header(); ?>
 
-<br/>
-			
-			<div class="row" id="archive">
-				<div class="large-12 columns">
-				
-					    <?php if (is_category()) { ?>
-						    <div class="large-12 columns center">
-							    <h2 class="archive-title h2">
-								    <?php single_cat_title(); ?>
-						    	</h2>
-					    	</div>
+	<div id="content">
+		<div class="padder">
 
-					    	<hr/>
+		<?php do_action( 'bp_before_archive' ); ?>
 
-					    <?php } elseif (is_tag()) { ?> 
-						    <h2 class="archive-title h2">
-							    <span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
-						    </h2>
-						    
-						    <hr/>
-					    
-					    <?php } elseif (is_author()) { 
-					    	global $post;
-					    	$author_id = $post->post_author;
-					    ?>
-						    <h2 class="archive-title h2">
+		<div class="page" id="blog-archives" role="main">
 
-						    	<span><?php _e("Posts By:"); ?></span> <?php echo get_the_author_meta('display_name', $author_id); ?>
+			<h3 class="pagetitle"><?php printf( __( 'You are browsing the archive for %1$s.', 'buddypress' ), wp_title( false, false ) ); ?></h3>
 
-						    </h2>
-					    <?php } elseif (is_day()) { ?>
-						    <h2 class="archive-title h2">
-	    						<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
-						    </h2>
-						    
-						    <hr/>
-		
-		    			<?php } elseif (is_month()) { ?>
-			    		    <h2 class="archive-title h2">
-				    	    	<span><?php _e("Monthly Archives:", "bonestheme"); ?></span> <?php the_time('F Y'); ?>
-					        </h2>
-					        
-					        <hr/>
-					
-					    <?php } elseif (is_year()) { ?>
-					        <h2 class="archive-title h2">
-					    	    <span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
-					        </h2>
-					        
-					        <hr/>
-					       
-					    <?php } ?>
-					    
-					    
-					    
-					    
-					    <div class="large-3 columns">
-							
-							<?php include('searchform.php') ?>
-							
-							<select name="archive-menu" onChange="document.location.href=this.options[this.selectedIndex].value;">
-							<option value="">Select month</option>
-							<?php wp_get_archives('type=monthly&format=option'); ?>
-							</select>
-							
-	
-							<form action="<?php bloginfo('url'); ?>/" method="get">
-								<div>
-								<?php
-								$select = wp_dropdown_categories('show_option_none=Select category&show_count=1&orderby=name&echo=0');
-								$select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select);
-								echo $select;
-								?>
-								<noscript><div><input type="submit" value="View" /></div></noscript>
-								</div>
-							</form>
-							
-							
-	
-							   <form action="<?php bloginfo('url'); ?>" method="get">
-							   
-							   <div>
-							   <?php
-							   $select = wp_dropdown_users('show_option_none=Select author&order=DESC&show=display_name&name=author&who=authors&echo=0');
-							   $select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select);
-							   echo $select;
-							   ?>
-							   
-	
-							   <noscript><input type="submit" name="submit" value="view" /></noscript>
-							   </div>
-							   </form>
-							
-						
+			<?php if ( have_posts() ) : ?>
+
+				<?php bp_dtheme_content_nav( 'nav-above' ); ?>
+
+				<?php while (have_posts()) : the_post(); ?>
+
+					<?php do_action( 'bp_before_blog_post' ); ?>
+
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+						<div class="author-box">
+							<?php echo get_avatar( get_the_author_meta( 'user_email' ), '50' ); ?>
+							<p><?php printf( _x( 'by %s', 'Post written by...', 'buddypress' ), bp_core_get_userlink( $post->post_author ) ); ?></p>
 						</div>
-					    
-					    
-					    
-					    
-					    
-					    <div class="large-9 columns">
-					    
-					    
-						<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts('posts_per_page=30&paged=' . $paged); ?>
-					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+						<div class="post-content">
+							<h2 class="posttitle"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php esc_attr_e( 'Permanent Link to', 'buddypress' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
-							<?php include(TEMPLATEPATH . '/loops/loop-feed.php') ?>
-						   		
-						   										   				
-						<?php endwhile; ?>	
-						   				        
-	   				        <?php kriesi_pagination();?>
-	   				
-	   				    <?php else : ?>
-	   				
-	   					    <article id="post-not-found" class="hentry clearfix">
-	   						    <header class="article-header">
-	   							    <h1><?php _e("Ruh-roh, that post or page has disappeared!", "bonestheme"); ?></h1>
-	   					    	</header>
-	   						    <section class="entry-content">
-	   							    <p><?php _e("Try double checking the URL.", "bonestheme"); ?></p>
-	   							</section>
-	   							<footer class="article-footer">
-	   							    <p><?php _e("This is the error message in the archive.php template. Please alert the webmaster.", "bonestheme"); ?></p>
-	   							</footer>
-	   				    	</article>
-	   				
-	   				    <?php endif; ?>
-	   				    
-	   				    
-						</div><!-- end 9 columns -->
-					</div> 	
-					</div><!-- end 12 columns -->
+							<p class="date"><?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ', ' ) ); ?></p>
 
+							<div class="entry">
+								<?php the_content( __( 'Read the rest of this entry &rarr;', 'buddypress' ) ); ?>
+								<?php wp_link_pages( array( 'before' => '<div class="page-link"><p>' . __( 'Pages: ', 'buddypress' ), 'after' => '</p></div>', 'next_or_number' => 'number' ) ); ?>
+							</div>
+
+							<p class="postmetadata"><?php the_tags( '<span class="tags">' . __( 'Tags: ', 'buddypress' ), ', ', '</span>' ); ?> <span class="comments"><?php comments_popup_link( __( 'No Comments &#187;', 'buddypress' ), __( '1 Comment &#187;', 'buddypress' ), __( '% Comments &#187;', 'buddypress' ) ); ?></span></p>
+						</div>
+
+					</div>
+
+					<?php do_action( 'bp_after_blog_post' ); ?>
+
+				<?php endwhile; ?>
+
+				<?php bp_dtheme_content_nav( 'nav-below' ); ?>
+
+			<?php else : ?>
+
+				<h2 class="center"><?php _e( 'Not Found', 'buddypress' ); ?></h2>
+				<?php get_search_form(); ?>
+
+			<?php endif; ?>
+
+		</div>
+
+		<?php do_action( 'bp_after_archive' ); ?>
+
+		</div><!-- .padder -->
+	</div><!-- #content -->
+
+	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

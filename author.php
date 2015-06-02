@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+ <?php include(TEMPLATEPATH . '/user-nav.php') ?>
+
 <div class="row section">
 <div class="large-12 columns">
 

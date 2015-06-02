@@ -27,7 +27,7 @@
 			<?php } else { ?>
 				
 				<li><a href="<?php echo site_url(); ?>">Home</a></li>
-				<li><a href="<?php echo home_url() . '/p/u/' . get_the_author_meta( 'user_login', wp_get_current_user()->ID ); ?>">Profile</a></li>
+				<li><a href="<?php echo home_url() . '/members/' . get_the_author_meta( 'user_login', wp_get_current_user()->ID ); ?>">Profile</a></li>
 				
 				<?php if(is_single() OR is_page()) { ?>	
 					<!-- if user wrote post or is an admin, show controls -->

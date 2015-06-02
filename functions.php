@@ -380,42 +380,7 @@ remove_action( 'personal_options', '_admin_bar_preferences' );
 
 
 // -------------------------Redirect Logins/out--------------------------//
-function self_uri()
-{
 
-    $url = 'http';
-    $script_name = '';
-
-    if (isset($_SERVER['REQUEST_URI'])):
-        $script_name = $_SERVER['REQUEST_URI'];
-
-    else:
-        $script_name = $_SERVER['PHP_SELF'];
-
-        if ($_SERVER['QUERY_STRING'] > ' '):
-            $script_name .= '?' . $_SERVER['QUERY_STRING'];
-
-        endif;
-    endif;
-
-        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on')
-            $url .= 's';
-
-        $url .= '://';
-
-        if ($_SERVER['SERVER_PORT'] != '80'):
-            $url .= $_SERVER['HTTP_HOST'] . ':' . $_SERVER['SERVER_PORT'] . $script_name;
-
-        else:
-            $url .= $_SERVER['HTTP_HOST'] . $script_name;
-
-        endif;
-
-    return $url;
-}
-//
-// $redirect = '&amp;redirect_to='.urlencode(self_uri());
-//
 
 
 // -------------------------Posts Per Page--------------------------//

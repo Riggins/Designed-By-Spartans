@@ -2433,7 +2433,7 @@ table {
 	http://foundation.zurb.com/docs/media-queries.html
 */
 /* adds easy media queries */
-body {
+body, html, * {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -4547,6 +4547,17 @@ header.is-fixed {
 .no-touch #cd-lateral-nav .socials a:hover.cd-google {
   background-position: -96px -32px; }
 
+/* User Navigation */
+/* buddypress support */
+nav.user-nav {
+  width: 100%; }
+  nav.user-nav li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px; }
+    nav.user-nav li:last-child {
+      margin-right: 0; }
+
 header.site-header {
   color: #504A46;
   background: #ffffff;
@@ -5054,10 +5065,10 @@ ol.commentlist .comment-author {
 				1px 0 1px rgba(0,0,0,0.2) inset,
 				-1px 0 1px rgba(0,0,0,0.2) inset;
 	background-color: #5d5d5d;
-			}*/
+ }*/
 /*----------------------------
 	Content area
------------------------------*/
+  -----------------------------*/
 #work-container {
   margin: 0 auto;
   width: 100%;
@@ -5137,9 +5148,20 @@ div.blog-feed-wrapper {
   float: left;
   position: relative;
   /*overflow: hidden;*/
-  max-height: 270px;
   width: 100%;
   margin-bottom: 20px; }
+  div.blog-feed-wrapper img {
+    float: left; }
+  div.blog-feed-wrapper .description {
+    float: right;
+    width: 100%;
+    font-size: 15px;
+    /*text-shadow: 0 1px #494949;*/
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #fff;
+    opacity: .7; }
 
 .preview-button {
   position: absolute;
@@ -5148,19 +5170,6 @@ div.blog-feed-wrapper {
   margin-left: -5%;
   text-align: center;
   z-index: 100; }
-
-div.description {
-  position: absolute;
-  bottom: 0;
-  left: 0px;
-  width: 100%;
-  font-size: 15px;
-  /*text-shadow: 0 1px #494949;*/
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  background: #fff;
-  opacity: .7; }
 
 div.description_content h5 a {
   clear: both; }
@@ -5329,14 +5338,14 @@ div.next-link a {
 .cat-button a:hover, .cat-button:active {
   color: #ffffff; }
 
-/*.cat-button:hover {
-	background-color: #8f8f8f;
-	color: #FFF;
-}
-
-.cat-button:active {
-	opacity: .4;
-}*/
+	/*.cat-button:hover {
+		background-color: #8f8f8f;
+		color: #FFF;
+	}
+	
+	.cat-button:active {
+		opacity: .4;
+   }*/
 /*=============== Pagination ===============*/
 .pagination {
   clear: both;

@@ -6,11 +6,6 @@
 
 				<!-- wrapper div -->
 				<div class='blog-feed-wrapper'>
-				
-					<!-- image -->
-						<a href="<?php the_permalink(); ?>">
-							<?php include(TEMPLATEPATH . "/thumbnail.php"); ?>
-						</a>
 						
 					<!-- description div -->
 					<div class='description'>
