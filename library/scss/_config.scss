@@ -4,10 +4,30 @@ $btn-br: 5px; // Button border-radius
 $padding: 40px; // Padding and margins
 $line-height: 44px; // Consistent height for buttons, inputs etc.
 
-// Color variables
-$primary-color: #1271db;
+/* Color variables */
+$primary-color: #4ea2fb;
 $secondary-color: #233E5B;
 $tertiary-color: #aaa;
+
+
+/* Main Content */
+$mainBackground: #F0F0F0;
+
+/* Navigation Colors */
+$headerColor: #44677E;
+$headerColorDark: darken($headerColor, 3);
+$headerColorHidden: darken($headerColor, 15);
+
+
+/* Footer */
+
+$footerColor: #44677E;
+
+
+
+
+
+
 
 // Better default colors
 // Cool

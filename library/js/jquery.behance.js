@@ -40,7 +40,7 @@
              project: 'http://www.behance.net/v2/projects/{id}'
          },
          page = 1,
-         perPage = 12,
+         perPage = 8,
          itemCount = 0,
          cssQueued = 'be-justadded',
          $showMore = $('<a/>').attr('id', options.showMoreID).attr('class', 'group'),

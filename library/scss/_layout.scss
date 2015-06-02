@@ -36,19 +36,6 @@ hr {
 	margin: 0 auto;
 }
 
-a, a:visited {
-	color: #4ea2fb;
-	
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-	
-	font-family: 'Open Sans', sans-serif;
-}
-
-a:hover {
-	color: #89cb47;
-}
 
 .float-right {
 	float: right;
@@ -59,15 +46,6 @@ a:hover {
 }
 
 
-/*.columns {
-	position: relative;
-	padding-left: 0!important;
-	/*padding-right: 0!important;*!/
-	/*width: 100%;
-	float: left;*!/
-}*/
-
-
 /*=============== Typography ===============*/
 
 p.subheader {
@@ -76,19 +54,6 @@ p.subheader {
 
 
 /*=============== Miscellaneous ===============*/
-
-/*ul {
-	list-style-type: disc;
-	margin: 0 0 10px 25px;
-	font-family: 'Open Sans', sans-serif;
-}
-	div#entry ul {
-		margin: 0 0 10px 50px;
-	}
-	li {
-		line-height: 2;
-		font-size: 120%;
-	}*/
 
 
 /* Webkit */
@@ -135,7 +100,7 @@ Main components
   /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
   min-height: 100%;
   position: relative;
-  background-color: #f5f4e9;
+  background-color: $mainBackground;
   z-index: 2;
   padding-top: 50px;
   /* Force Hardware Acceleration in WebKit */
@@ -168,24 +133,16 @@ header {
   left: 0;
   height: 50px;
   width: 100%;
-  background: #4e6361;
+  background: $headerColor;
   z-index: 3;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 header.lateral-menu-is-open {
   /* translate to show the lateral menu */
-  -webkit-transform: translateX(-260px);
-  -moz-transform: translateX(-260px);
-  -ms-transform: translateX(-260px);
-  -o-transform: translateX(-260px);
   transform: translateX(-260px);
 }
 header.is-fixed {
@@ -220,7 +177,7 @@ header.is-fixed {
 }
 #cd-top-nav ul {
   height: 100%;
-  padding-top: 18px;
+  /*padding-top: 18px;*/
 }
 #cd-top-nav li {
   display: inline-block;
@@ -251,7 +208,8 @@ header.is-fixed {
   top: 0;
   height: 100%;
   width: 50px;
-  background-color: #64807d;
+  background-color: $headerColorDark;
+  outline: none;
 }
 #cd-menu-trigger .cd-menu-text {
   height: 100%;
@@ -343,19 +301,13 @@ header.is-fixed {
   /* the secondary navigation is covered by the main element */
   z-index: 1;
   width: 260px;
-  background-color: #242e30;
+  background-color: $headerColorHidden;
   overflow-y: auto;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-  -webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
-  -moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
   transition: transform .4s 0s, visibility 0s .4s;
   /* this creates the subtle slide in animation of the navigation */
-  -webkit-transform: translateX(80px);
-  -moz-transform: translateX(80px);
-  -ms-transform: translateX(80px);
-  -o-transform: translateX(80px);
   transform: translateX(80px);
 }
 #cd-lateral-nav .cd-navigation {
@@ -658,7 +610,7 @@ background: #89CB47;
 #footer-top {
 	width: 100%;
 	padding: 40px 0;
-	background-color: #4e6361;
+	background-color: $footerColor;
 	margin-top: 40px;
 	border-top: 1px solid #333;
 	border-color: #d3d3d3;

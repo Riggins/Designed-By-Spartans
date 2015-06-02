@@ -352,7 +352,7 @@
 		},
 	"\/assets\/js\/app.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/app.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/app-min.js",
@@ -363,7 +363,7 @@
 		},
 	"\/assets\/js\/jquery.animsition.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/jquery.animsition.min.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/jquery.animsition.min-min.js",
@@ -374,7 +374,7 @@
 		},
 	"\/assets\/js\/jquery.easing.1.3.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/jquery.easing.1.3.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/jquery.easing.1.3-min.js",
@@ -385,7 +385,7 @@
 		},
 	"\/assets\/js\/jquery.fittext.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/jquery.fittext.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/jquery.fittext-min.js",
@@ -396,7 +396,7 @@
 		},
 	"\/assets\/js\/jquery.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/jquery.min.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/jquery.min-min.js",
@@ -407,7 +407,7 @@
 		},
 	"\/assets\/js\/jribbble.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/jribbble.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/jribbble-min.js",
@@ -418,7 +418,7 @@
 		},
 	"\/assets\/js\/login.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/login.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/login-min.js",
@@ -429,7 +429,7 @@
 		},
 	"\/assets\/js\/modernizr.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/modernizr.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/modernizr-min.js",
@@ -440,7 +440,7 @@
 		},
 	"\/assets\/js\/nav.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/nav.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/nav-min.js",
@@ -451,7 +451,7 @@
 		},
 	"\/assets\/js\/pace.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/pace.min.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/pace.min-min.js",
@@ -462,7 +462,7 @@
 		},
 	"\/assets\/js\/retina.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/retina.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/retina-min.js",
@@ -473,7 +473,7 @@
 		},
 	"\/assets\/js\/snap.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/snap.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/snap-min.js",
@@ -484,7 +484,7 @@
 		},
 	"\/assets\/js\/vendor\/custom.modernizr.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/vendor\/custom.modernizr.js",
 		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/custom.modernizr-min.js",
@@ -495,7 +495,7 @@
 		},
 	"\/assets\/js\/vendor\/jquery.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/vendor\/jquery.js",
 		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/jquery-min.js",
@@ -506,7 +506,7 @@
 		},
 	"\/assets\/js\/vendor\/zepto.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/vendor\/zepto.js",
 		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/zepto-min.js",
@@ -680,7 +680,7 @@
 		},
 	"\/library\/js\/animsition.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/animsition.min.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/animsition.min-min.js",
@@ -691,7 +691,7 @@
 		},
 	"\/library\/js\/jquery-1.11.3.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/jquery-1.11.3.min.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/jquery-1.11.3.min-min.js",
@@ -702,7 +702,7 @@
 		},
 	"\/library\/js\/jquery.behance.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/jquery.behance.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/jquery.behance-min.js",
@@ -713,7 +713,7 @@
 		},
 	"\/library\/js\/jribbble.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/jribbble.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/jribbble-min.js",
@@ -724,7 +724,7 @@
 		},
 	"\/library\/js\/main.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/main.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/main-min.js",
@@ -733,9 +733,20 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/library\/js\/min\/jquery.behance-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/min\/jquery.behance-min.js",
+		"outputAbbreviatedPath": "\/library\/js\/min\/min\/jquery.behance-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/library\/js\/readingTime.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/readingTime.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/readingTime-min.js",
@@ -1811,6 +1822,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/page-directory.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/page-directory.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/page-tour.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1955,7 +1975,7 @@
 	"iconImageName": "brackets_blue"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -2121,7 +2141,7 @@
 	"jadeAutoOutputPathStyle": 0,
 	"jadeCompileDebug": 1,
 	"jadeOutputStyle": 0,
-	"javascriptAutoOutputPathEnabled": 1,
+	"javascriptAutoOutputPathEnabled": 0,
 	"javascriptAutoOutputPathFilenamePattern": "*-min.js",
 	"javascriptAutoOutputPathRelativePath": "\/min",
 	"javascriptAutoOutputPathReplace1": "",

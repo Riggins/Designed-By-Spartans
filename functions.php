@@ -563,6 +563,15 @@ function my_show_extra_profile_fields( $user ) { ?>
 			</td>
 		</tr>
 
+    <tr>
+      <th><label for="facebook">Facebook</label></th>
+
+      <td>
+        <input type="text" name="facebook" id="facebook" value="<?php echo esc_attr( get_the_author_meta( 'facebook', $user->ID ) ); ?>" class="regular-text" /><br />
+        <span class="description">Please enter your Facebook username.</span>
+      </td>
+    </tr>
+
 	</table>
 
 <?php }
@@ -579,6 +588,7 @@ function my_save_extra_profile_fields( $user_id ) {
 		update_usermeta( $user_id, 'behance', $_POST['behance'] );
     update_usermeta( $user_id, 'dribbble', $_POST['dribbble'] );
 		update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
+    update_usermeta( $user_id, 'twitter', $_POST['facebook'] );
 }
 
 

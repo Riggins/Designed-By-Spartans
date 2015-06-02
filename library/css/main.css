@@ -1,7 +1,7 @@
 /******************************************************************
-Site Name: Your Site Name
-Author: Your Site Name
-URL: http://yoursite.com
+Site Name: Designed by Spartans
+Author: Designed by Spartans
+URL: http://dbs.halfbake.me
 ******************************************************************/
 /*********************
 IMPORTING PARTIALS
@@ -2397,6 +2397,10 @@ table {
   border-spacing: 0; }
 
 /* fix browser inconsistencies */
+/* Color variables */
+/* Main Content */
+/* Navigation Colors */
+/* Footer */
 /* adds re-usable colors and measurements */
 .clearfix, .group {
   zoom: 1; }
@@ -2443,7 +2447,7 @@ blockquote {
   padding-left: 25px;
   font-size: 1.4em;
   margin: 0 0 20px;
-  border-left: 2px solid #1271db; }
+  border-left: 2px solid #4ea2fb; }
 
 h1, h2, h3, h4, h5 {
   font-family: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
@@ -2520,10 +2524,12 @@ pre {
     font-size: 14px; } }
 /* Styles for general anchor tags and re-usable buttons */
 a {
-  color: #1271db;
-  text-decoration: none; }
+  color: #4ea2fb;
+  text-decoration: none;
+  transition: all 0.3s; }
   a:hover, a:focus {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #067bf7; }
 
 .btn, .btn-primary, .btn-secondary, .btn-link {
   -webkit-border-radius: 5px;
@@ -2546,11 +2552,11 @@ a {
     background: #909090; }
 
 .btn-primary {
-  background-color: #1271db; }
+  background-color: #4ea2fb; }
   .btn-primary:hover, .btn-primary:focus {
-    background-color: #1065c3; }
+    background-color: #3595fa; }
   .btn-primary:active {
-    background-color: #0e59ac; }
+    background-color: #1c88fa; }
 
 .btn-secondary {
   background-color: #233E5B; }
@@ -2565,7 +2571,7 @@ a {
   height: 66px; }
 
 .btn-link {
-  color: #1271db;
+  color: #4ea2fb;
   background: transparent;
   border: none;
   text-shadow: none;
@@ -2608,7 +2614,7 @@ input[type=text], input[type=email], input[type=phone], input[type=password], in
   height: 44px;
   width: 300px; }
   input[type=text]:focus, input[type=email]:focus, input[type=phone]:focus, input[type=password]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus {
-    border-color: #1271db; }
+    border-color: #4ea2fb; }
   input[type=text].full-width, input[type=email].full-width, input[type=phone].full-width, input[type=password].full-width, input[type=number].full-width, input[type=search].full-width, textarea.full-width {
     width: 100%; }
 
@@ -4173,46 +4179,17 @@ hr {
   text-align: center;
   margin: 0 auto; }
 
-a, a:visited {
-  color: #4ea2fb;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  font-family: 'Open Sans', sans-serif; }
-
-a:hover {
-  color: #89cb47; }
-
 .float-right {
   float: right; }
 
 .float-left {
   float: left; }
 
-/*.columns {
-	position: relative;
-	padding-left: 0!important;
-	/*padding-right: 0!important;*!/
-	/*width: 100%;
-	float: left;*!/
-}*/
 /*=============== Typography ===============*/
 p.subheader {
   margin-bottom: 40px !important; }
 
 /*=============== Miscellaneous ===============*/
-/*ul {
-	list-style-type: disc;
-	margin: 0 0 10px 25px;
-	font-family: 'Open Sans', sans-serif;
-}
-	div#entry ul {
-		margin: 0 0 10px 50px;
-	}
-	li {
-		line-height: 2;
-		font-size: 120%;
-	}*/
 /* Webkit */
 ::selection {
   color: #444444;
@@ -4250,7 +4227,7 @@ Main components
   /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
   min-height: 100%;
   position: relative;
-  background-color: #f5f4e9;
+  background-color: #F0F0F0;
   z-index: 2;
   padding-top: 50px;
   /* Force Hardware Acceleration in WebKit */
@@ -4280,24 +4257,16 @@ header {
   left: 0;
   height: 50px;
   width: 100%;
-  background: #4e6361;
+  background: #44677E;
   z-index: 3;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
   transition-duration: 0.4s; }
 
 header.lateral-menu-is-open {
   /* translate to show the lateral menu */
-  -webkit-transform: translateX(-260px);
-  -moz-transform: translateX(-260px);
-  -ms-transform: translateX(-260px);
-  -o-transform: translateX(-260px);
   transform: translateX(-260px); }
 
 header.is-fixed {
@@ -4326,7 +4295,7 @@ header.is-fixed {
 
 #cd-top-nav ul {
   height: 100%;
-  padding-top: 18px; }
+  /*padding-top: 18px;*/ }
 
 #cd-top-nav li {
   display: inline-block;
@@ -4354,7 +4323,8 @@ header.is-fixed {
   top: 0;
   height: 100%;
   width: 50px;
-  background-color: #64807d; }
+  background-color: #3f5f74;
+  outline: none; }
 
 #cd-menu-trigger .cd-menu-text {
   height: 100%;
@@ -4443,19 +4413,13 @@ header.is-fixed {
   /* the secondary navigation is covered by the main element */
   z-index: 1;
   width: 260px;
-  background-color: #242e30;
+  background-color: #293e4c;
   overflow-y: auto;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-  -webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
-  -moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
   transition: transform .4s 0s, visibility 0s .4s;
   /* this creates the subtle slide in animation of the navigation */
-  -webkit-transform: translateX(80px);
-  -moz-transform: translateX(80px);
-  -ms-transform: translateX(80px);
-  -o-transform: translateX(80px);
   transform: translateX(80px); }
 
 #cd-lateral-nav .cd-navigation {
@@ -4688,7 +4652,7 @@ nav#nav {
 #footer-top {
   width: 100%;
   padding: 40px 0;
-  background-color: #4e6361;
+  background-color: #44677E;
   margin-top: 40px;
   border-top: 1px solid #333;
   border-color: #d3d3d3; }

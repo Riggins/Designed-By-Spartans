@@ -14,11 +14,21 @@
 	?>
 
 
+
+	<!-- establish "$user->ID" as the universal ID -->
+<!-- 	<?php 
+	global $current_user;
+	$current_user = wp_get_current_user();
+	$user->ID=$current_user->ID;
+	?> -->
+
+
 	<!-- subscribe to authors 
 	<?php echo do_shortcode('[contributors]'); ?>-->
 	
 		<br/>
-		(<a href="<?php echo get_edit_user_link(); ?>">Edit profile</a>)
+		
+		<a href="<?php echo get_edit_user_link(); ?>">Edit profile</a>
 
 		<h2 rel="nofollow"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h2>
 	
@@ -26,17 +36,23 @@
 		
 		<a rel="nofollow" href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a> <br/>
 		
-		<hr />
-		
-		<h5>Follow Me</h5>
-		
-		<?php if ( get_the_author_meta( 'dribbble' ) ) { ?>
-			<a href="http://twitter.com/<?php echo get_the_author_meta( 'dribbble' ) ?>">Dribbble</a>
-		<?php } ?>
-		
-		<?php if ( get_the_author_meta( 'twitter' ) ) { ?>
-			<a href="http://twitter.com/<?php echo get_the_author_meta( 'twitter' ) ?>">Twitter</a>
-		<?php } ?>
+
+		<!-- User Links -->
+			<?php if ( get_the_author_meta( 'behance', $user->ID ) ) { ?>
+				<a href="http://behance.net/<?php echo esc_attr( $curauth->behance ); ?>">Behance</a>
+			<?php } ?>
+
+			<?php if ( get_the_author_meta( 'dribbble', $user->ID ) ) { ?>
+				<a href="http://dribbble.com/<?php echo esc_attr( $curauth->dribbble ); ?>">Dribbble</a>
+			<?php } ?>
+			
+			<?php if ( get_the_author_meta( 'twitter', $user->ID ) ) { ?>
+				<a href="http://twitter.com/<?php echo esc_attr( $curauth->twitter ); ?>">Twitter</a>
+			<?php } ?>
+
+			<?php if ( get_the_author_meta( 'facebook', $user->ID ) ) { ?>
+				<a href="http://facebook.com/<?php echo esc_attr( $curauth->facebook ); ?>">Facebook</a>
+			<?php } ?>
 		
 		<br />
 
@@ -53,6 +69,12 @@
 </div>
 
 	<hr/>
+
+
+
+
+
+
 	
 <div class="row">
 <div class="large-12 columns">
@@ -79,8 +101,16 @@
 	
 	</div><!-- end posts section -->
 
+
+
+
+
+
+
+
+
 	<!-- Behance Section if applicable -->
-	<?php if ( get_the_author_meta( 'behance' ) ) { ?>
+	<?php if ( get_the_author_meta( 'behance', $user->ID ) ) { ?>
 		
 		<h2>Behance</h2>
 		
@@ -88,6 +118,7 @@
 		
 		<div class="row">
 			<div id="be-grid"></div>
+			<div id="be-showmore"></div>
 		</div>
 							
 		<script>
@@ -95,7 +126,7 @@
 
 		    $('#be-grid').behance({
 		      apiKey: 'EgW8NEun0zQUYlzNoHc6d0FsjWRuMnlF',
-		      user: '<?php echo get_the_author_meta( 'behance' ) ?>',
+		      user: '<?php echo esc_attr( $curauth->behance ); ?>',
 		      sort: 'featured_date',
 		      gridID: '#be-grid',
 		      cssItem: 'large-3 medium-3 columns',
@@ -108,8 +139,20 @@
 		
     <?php } ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
 	<!-- Dribbble Section if applicable -->
-	<?php if ( get_the_author_meta( 'dribbble' ) ) { ?>
+	<?php if ( get_the_author_meta( 'dribbble', $user->ID ) ) { ?>
 		
 		<h2>Dribbble</h2>
 		
@@ -127,7 +170,7 @@
 			});
 			
 			$(document).ready(function getDribbbleShots() {   
-			  $.jribbble.getShotsByPlayerId('<?php echo get_the_author_meta( 'dribbble' ) ?>', function (playerShots) {
+			  $.jribbble.getShotsByPlayerId('<?php echo esc_attr( $curauth->dribbble ); ?>', function (playerShots) {
 			      var html = [];
 			      $.each(playerShots.shots, function (i, shot) {
 			          html.push('<div class="large-4 medium-4 columns"> <a href="' + shot.url + '" target="_blank">');
@@ -140,6 +183,12 @@
 		</script>
 		
     <?php } ?>
+
+
+
+
+
+
 
 
 </div><!-- end 12 columns -->

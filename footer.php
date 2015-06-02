@@ -9,13 +9,9 @@
 					
 					<div class="large-3 columns">
 						
-						<h4>Top Curators</h4>
-						<?php foreach ( get_users( 'order=DESC&orderby=post_count&number=5' ) as $user ) : ?>
-						
-						    <?php echo $user->display_name; ?> (<?php echo $user->post_count; ?> posts) <br/>
-						
-						<?php endforeach; ?>
-						
+						<h4>Members</h4>
+
+						<?php wp_list_authors('exclude_admin=0&optioncount=0&show_fullname=1&hide_empty=0'); ?>						
 
 					</div>
 			
