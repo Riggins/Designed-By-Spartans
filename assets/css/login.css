@@ -12,8 +12,8 @@
 	text-decoration: none!important;
 }
 
-.login #nav {
-	padding: 16px 0 0;
+.login #nav, .login #backtoblog {
+	padding: 20px 0 0;
 }
 
 .login form {
@@ -29,19 +29,25 @@ div#login {
 }
 
 body.login {
-	background: url(http://unsplash.s3.amazonaws.com/batch%204/bright-lights-big-city.jpg) center center / cover no-repeat fixed;
-	font-family: "brandon-grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*background: url(http://unsplash.s3.amazonaws.com/batch%204/bright-lights-big-city.jpg) center center / cover no-repeat fixed;*/
+
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: 1.5;
-	
-	/* full page background image */
-	/* http://css-tricks.com/perfect-full-page-background-image */
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+
+
 	margin: 0 auto!important;
 	color: none;
+
+
+	background: #3e4564;
+background: -moz-linear-gradient(-45deg,  #3e4564 0%, #abb173 100%);
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#3e4564), color-stop(100%,#abb173));
+background: -webkit-linear-gradient(-45deg,  #3e4564 0%,#abb173 100%);
+background: -o-linear-gradient(-45deg,  #3e4564 0%,#abb173 100%);
+background: -ms-linear-gradient(-45deg,  #3e4564 0%,#abb173 100%);
+background: linear-gradient(135deg,  #3e4564 0%,#abb173 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e4564', endColorstr='#abb173',GradientType=1 );
+
 }
 
 body.login h1 a {
@@ -63,6 +69,8 @@ form#loginform, #registerform {
 	box-shadow: 0 2px 6px #5c5c5c;
 	
 	background: #fff;
+
+	border-radius: 3px;
 	
 	/* Styles */
 
