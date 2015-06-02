@@ -46,8 +46,6 @@ if ( post_password_required() ) {
 
 					'avatar_size'       => 40,
 
-					'callback'          => 'bones_comments',
-
 					'type'              => 'all',
 
 					'reply_text'        => __('Reply', 'bonestheme'),
