@@ -50,7 +50,7 @@
 		<!-- === Template Styles === -->	
 		<link href="<?php bloginfo('template_url'); ?>/library/css/main.css" media="screen" rel="stylesheet" type="text/css" />
 		
-		<link href="<?php bloginfo('template_url'); ?>/assets/css/animsition.min.css" media="screen" rel="stylesheet" type="text/css" />
+		<!-- <link href="<?php bloginfo('template_url'); ?>/assets/css/animsition.min.css" media="screen" rel="stylesheet" type="text/css" /> -->
 
 
 		
@@ -61,9 +61,7 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery-1.11.3.min.js"></script>
 
 		<!-- Animsition -->
-		<script src="<?php echo get_template_directory_uri(); ?>/library/js/animsition.min.js"></script>
-
-		<script src="<?php bloginfo('template_url'); ?>/assets/js/app.js"></script>
+		<!-- <script src="<?php echo get_template_directory_uri(); ?>/library/js/animsition.min.js"></script> -->
 		
 		<!-- Navigation -->
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/nav.js"></script>

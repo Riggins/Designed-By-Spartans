@@ -19,32 +19,8 @@ function dmk_strip_loggedout( $login_url ) {
 	return str_replace( '%3Floggedout%3Dtrue', '', $login_url );
 }
 
-
-
-
-
-
-
-
-// ------------------------Admin Alerts/Messages---------------------------//
-// Display Theme Information Widget (Dashboard)
-function wpc_dashboard_widget_function() {
-	echo "<ul><h2>Site Info</h2>
-	<li>Status: Running well.</li>
-	<li>Release Date: December 24, 2012</li>
-	<li>Version 1.0: Fixes minor display glitches (sidebar), adds support for WP Polls plugin (sidebar), updated with hNews microformat support, updated homepage design.</li>
-	</ul>
-
-	<ul><h2>Next Updates</h2>
-	<li>[2.0] Slider on Homepage!</li>
-	<li>[2.0] Updated mobile version</li>
-	<li>[3.0] New homepage design</li>
-	</ul>";
-}
-function wpc_add_dashboard_widgets() {
-	wp_add_dashboard_widget('wp_dashboard_widget', 'Theme Information', 'wpc_dashboard_widget_function');
-}
-add_action('wp_dashboard_setup', 'wpc_add_dashboard_widgets' );
+// ------------------------Remove BuddyPress registration---------------------------//
+remove_action( 'bp_init', 'bp_core_wpsignup_redirect' );
 
 // ------------------------Custom Excerpt Length---------------------------//
 function get_excerpt($count){
@@ -274,7 +250,7 @@ add_theme_support( 'post-thumbnails' );
 // ------------------------http://wordpress.org/support/topic/how-to-change-author-base-without-front ---------------------------//
 function change_author_permalinks() {
     global $wp_rewrite;
-    $wp_rewrite->author_base = 'p/u';
+    $wp_rewrite->author_base = 'spartan/';
     $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base. '/%author%';
 }
 add_action('init','change_author_permalinks');
@@ -379,9 +355,6 @@ add_filter( 'show_admin_bar', '__return_false' );
 remove_action( 'personal_options', '_admin_bar_preferences' );
 
 
-// -------------------------Redirect Logins/out--------------------------//
-
-
 
 // -------------------------Posts Per Page--------------------------//
 
@@ -408,6 +381,8 @@ function my_post_queries( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'my_post_queries' );
+
+
 
 
 // -------------------------Show Active Authors--------------------------//

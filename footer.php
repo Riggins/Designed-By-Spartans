@@ -114,8 +114,12 @@
 		</ul> <!-- cd-single-item-wrapper -->
 	</nav>
 	
-	
-	
+
+		<!-- Animsition -->
+		<!-- <script src="<?php echo get_template_directory_uri(); ?>/library/js/animsition.min.js"></script> -->
+
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/app.js"></script>
+
 			
 					
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/retina.js"></script>
@@ -137,7 +141,7 @@
   		
   		<?php } ?>
   		<!-- end analytics -->
-			
+	
 			
 			<?php wp_footer(); ?>
 	</div>

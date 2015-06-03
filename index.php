@@ -58,9 +58,6 @@
 
 <hr />
 
-
-
-
 <!-- Recent Activity -->
 
 <div class="row">
